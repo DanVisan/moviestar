@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="search-container">
+    <input type="text" name="search-bar" placeholder="Search..." class="search-input" [(ngModel)]="searchTitle" (keyup.enter)="getFiltered()">
+    <button class="btn btn-warning search-btn" type="button" (click)="getFiltered()"><i class="fa fa-search"></i></button>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 offset-1 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-0 mx-auto mx-sm-0 mx-md-0 mx-lg-0 margin_bottom"
+      *ngFor="let rating of ratings">
+      <div class="card">
+        <div class="dropdown">
+          <button class="btn btn-warning dropdown-toggle float-right dropdown_border_radius_landscape rating_button rating_button_txt" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fa fa-star"></i>&nbsp;{{rating.score}}</button>
+          <ul class="dropdown-menu dropdown-menu-right rating_meniu_width" role="menu">
+            <li class="dropdown-item" (click)="selectRating(rating, '0.5')">0.5</li>
+            <li class="dropdown-item" (click)="selectRating(rating, '1.0')">1.0</li>
+            <li class="dropdown-item" (click)="selectRating(rating, '1.5')">1.5</li>
+            <li class="dropdown-item" (click)="selectRating(rating, '2.0')">2.0</li>
+            <li class="dropdown-item" (click)="selectRating(rating, '2.5')">2.5</li>
+            <li class="dropdown-item" (click)="selectRating(rating, '3.0')">3.0</li>
+            <li class="dropdown-item" (click)="selectRating(rating, '3.5')">3.5</li>
+            <li class="dropdown-item" (click)="selectRating(rating, '4.0')">4.0</li>
+            <li class="dropdown-item" (click)="selectRating(rating, '4.5')">4.5</li>
+            <li class="dropdown-item" (click)="selectRating(rating, '5.0')">5.0</li>
+          </ul>
+          <button class="btn btn-danger float-right del_button" type="button" (click)="delete(rating)"><i class="fa fa-trash"></i> Delete</button>
+        </div>
+        <div class="card-header bg_transparent heading_padding">
+          <h6 class="margin_0">{{rating.movie.title}}</h6>
+          <p class="margin_0">{{rating.movie.releaseDate}}</p>
+          <p class="margin_0">{{rating.movie.genres}}</p>
+        </div>
+        <div class="card-content">
+          <p class="margin_0">{{getMovieOverview(rating)}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

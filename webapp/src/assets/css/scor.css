@@ -1,0 +1,16 @@
+.scor_font {
+  font-size:20px;
+  margin-top:9px;
+  color:#15171a;
+}
+
+.scor_base {
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  z-index:100;
+  margin:-30px 0px 0px 8px;
+  background-color:#ffc107;
+  padding:5px;
+}
+

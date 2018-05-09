@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="search-container">
+    <input type="text" name="search-bar" placeholder="Search..." class="search-input" [(ngModel)]="searchTitle" (keyup.enter)="getFiltered()">
+    <button class="btn btn-warning search-btn" type="button" (click)="getFiltered()"><i class="fa fa-search"></i></button>
+  </div>
+
+  <div class="row">
+      <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 offset-1 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-0 mx-auto mx-sm-0 mx-md-0 mx-lg-0 margin_bottom"
+           *ngFor="let movie of movies">
+        <div class="card card_p">
+          <div class="dropdown">
+            <button class="btn btn-warning btn-block dropdown-toggle dropdown_border_radius rating_button rating_button_txt" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fa fa-star"></i>&nbsp;Rate</button>
+            <ul class="dropdown-menu dropdown-menu-right rating_meniu_width" role="menu">
+              <li class="dropdown-item" (click)="rate(movie, '0.5')">0.5</li>
+              <li class="dropdown-item" (click)="rate(movie, '1.0')">1.0</li>
+              <li class="dropdown-item" (click)="rate(movie, '1.5')">1.5</li>
+              <li class="dropdown-item" (click)="rate(movie, '2.0')">2.0</li>
+              <li class="dropdown-item" (click)="rate(movie, '2.5')">2.5</li>
+              <li class="dropdown-item" (click)="rate(movie, '3.0')">3.0</li>
+              <li class="dropdown-item" (click)="rate(movie, '3.5')">3.5</li>
+              <li class="dropdown-item" (click)="rate(movie, '4.0')">4.0</li>
+              <li class="dropdown-item" (click)="rate(movie, '4.5')">4.5</li>
+              <li class="dropdown-item" (click)="rate(movie, '5.0')">5.0</li>
+            </ul>
+          </div>
+          <img [src]="setPicture(movie)" width="240" height="360">
+          <div class="scor_base">
+            <p class="scor_font"><i class="fa fa-thumbs-up"></i>&nbsp;{{movie.voteAverage}}</p>
+          </div>
+          <div class="card-header bg_transparent">
+            <h6 class="margin_0">{{movie.title}}</h6>
+            <p class="margin_0">{{movie.releaseDate}}</p>
+            <p class="margin_0">{{movie.genres}}</p>
+          </div>
+          <div class="card-content">
+            <p class="margin_0">{{getMovieOverview(movie)}}</p>
+          </div>
+        </div>
+      </div>  <!--card-->
+  </div>  <!--row-->
+</div>

@@ -1,0 +1,62 @@
+.card {
+  border:none;
+  box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition:all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card:hover {
+  box-shadow:0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-content, .card-header, .card-footer {
+  padding:16px;
+}
+
+.bg_transparent {
+  background-color:transparent;
+}
+
+.star_color {
+  color:#ffd740;
+}
+
+.margin_0 {
+  margin:0px;
+}
+
+.rating_meniu_width {
+  min-width:40px;
+}
+
+.rating_button {
+  background-color:#15171a;
+  color:#ffc107;
+  border:none;
+}
+
+.rating_button_txt {
+  font-size:20px;
+  font-weight:500;
+}
+
+.dropdown_border_radius_landscape {
+  border-radius:0px 3px 0px 0px;
+}
+
+.del_button {
+  border-radius:0px;
+  background-color:#15171a;
+  color:#ffc107;
+  border:none;
+  border-right:1px solid #4d3a02;
+  padding:9px;
+}
+
+.margin_bottom {
+  margin-bottom:16px;
+}
+
+.heading_padding {
+  padding:8px 0px 8px 16px;
+}
+

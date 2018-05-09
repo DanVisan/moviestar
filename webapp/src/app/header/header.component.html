@@ -1,0 +1,26 @@
+<div class="container">
+  <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/movies">
+        <img src="../../assets/img/movie_taste_logo_v6_40px.png"> Movie Star
+      </a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-navicon toggle_icon_color"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" routerLink="/movies" [routerLinkActive]="['active']">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/ratings" [routerLinkActive]="['active']">My Ratings</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/recommendations" [routerLinkActive]="['active']">Recommendations</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <p class="api_headline">
+    <a href="https://www.themoviedb.org/documentation/api" target="_blank">
+      <img src="../../assets/img/the_movie_db_40px.png">
+    </a>
+    This product uses the TMDb API but is not endorsed or certified by TMDb.
+  </p>
+</div>

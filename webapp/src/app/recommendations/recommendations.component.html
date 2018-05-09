@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="search-container">
+    <input type="text" name="search-bar" placeholder="Search..." class="search-input" [(ngModel)]="searchTitle" (keyup.enter)="getFiltered()">
+    <button class="btn btn-warning search-btn" type="button" (click)="getFiltered()"><i class="fa fa-search"></i></button>
+  </div>
+
+  <div class="row">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 offset-1 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-0 mx-auto mx-sm-0 mx-md-0 mx-lg-0 margin_bottom"
+         *ngFor="let recommendation of recommendations">
+      <div class="card card_p">
+        <div class="rating">
+          <p class="text-center rating_txt"><i class="fa fa-star"></i>&nbsp;{{recommendation.score}}</p>
+        </div>
+        <img [src]="setPicture(recommendation)" width="240" height="360">
+        <div class="card-header bg_transparent">
+          <h6 class="margin_0">{{recommendation.movie.title}}</h6>
+          <p class="margin_0">{{recommendation.movie.releaseDate}}</p>
+          <p class="margin_0">{{recommendation.movie.genres}}</p>
+        </div>
+        <div class="card-content">
+          <p class="margin_0">{{getMovieOverview(recommendation)}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
